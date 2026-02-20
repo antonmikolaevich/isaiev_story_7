@@ -59,6 +59,7 @@ export default tseslint.config(
         {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
         },
       ],
       'no-debugger': 'warn', // Warn about debugger statements
@@ -92,6 +93,8 @@ export default tseslint.config(
             'verifyConfigurationSectionDisplayed',
             'verifyCostDisplayed',
             'verifyCostIsDisplayed',
+            'verifyHeaderContains',
+            'verifyFooterContains',
           ],
         },
       ],

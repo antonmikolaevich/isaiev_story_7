@@ -112,19 +112,6 @@ export class CalculatorPage extends BasePage {
     await expect(this.costDisplay).toHaveText(expectedCost);
   }
 
-  async handleCookieConsent(buttonText: string): Promise<void> {
-    try {
-      const cookieButton = this.page.locator(`//*[text()="${buttonText}"]`);
-      // Check if element exists with timeout
-      const isVisible = await cookieButton.isVisible({ timeout: 3000 });
-      if (isVisible) {
-        await cookieButton.click();
-      }
-    } catch (error) {
-      // Cookie consent not found or already accepted - continue
-    }
-  }
-
   // Enhanced configuration methods
 
   async setInstanceCount(count: number): Promise<void> {
