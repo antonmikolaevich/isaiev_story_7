@@ -11,6 +11,13 @@ export default defineConfig({
   // Maximum time one test can run
   timeout: 30 * 1000,
 
+  // Visual comparison settings
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixels: 100,
+    },
+  },
+
   // Test execution settings
   fullyParallel: false,
   forbidOnly: !!process.env['CI'],
