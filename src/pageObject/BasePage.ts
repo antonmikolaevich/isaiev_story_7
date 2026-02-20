@@ -1,8 +1,16 @@
-export class BasePage {
-  constructor(private readonly url: any) {}
+import { Page } from '@playwright/test';
 
-  // @ts-ignore
-  open(url: any) {
-    return browser.url(this.url);
+export class BasePage {
+  constructor(
+    protected readonly page: Page,
+    private readonly url: string,
+  ) {}
+
+  async open(): Promise<void> {
+    await this.page.goto(this.url);
+  }
+
+  async getUrl(): Promise<string> {
+    return this.page.url();
   }
 }

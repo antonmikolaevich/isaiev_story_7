@@ -1,4 +1,4 @@
-const moment = require('moment');
+// Removed moment dependency - using native Date instead
 
 exports.config = {
   autoCompileOpts: {
@@ -21,10 +21,13 @@ exports.config = {
   capabilities: [
     {
       browserName: 'chrome',
+      'goog:chromeOptions': {
+        args: ['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage'],
+      },
     },
   ],
 
-  logLevel: 'trace',
+  logLevel: 'warn',
 
   bail: 0,
   baseUrl: 'https://cloud.google.com',
@@ -42,7 +45,7 @@ exports.config = {
   },
 
   onPrepare() {
-    console.warn(`Start time: ${moment().format('YYYY-MM-DD HH:mm:ss')}`);
+    console.warn(`Start time: ${new Date().toISOString().replace('T', ' ').substring(0, 19)}`);
   },
 
   async before() {
@@ -56,6 +59,6 @@ exports.config = {
   },
 
   onComplete() {
-    console.warn(`Finish time: ${moment().format('YYYY-MM-DD HH:mm:ss')}`);
-  }
+    console.warn(`Finish time: ${new Date().toISOString().replace('T', ' ').substring(0, 19)}`);
+  },
 };

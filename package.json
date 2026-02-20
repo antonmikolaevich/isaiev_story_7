@@ -4,31 +4,36 @@
   "description": "Automated Testing Mentoring with JS: Intermediate",
   "private": true,
   "scripts": {
-    "test": "wdio",
-    "report:generate": "allure generate"
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:smoke": "playwright test src/tests/smoke",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint"
   },
   "license": "EPAM Systems",
-  "dependencies": {
-    "@types/chai": "4.3.16",
-    "@types/node": "^14.18.63",
-    "@wdio/allure-reporter": "7.2.1",
-    "@wdio/cli": "7.2.3",
-    "@wdio/local-runner": "7.2.3",
-    "@wdio/mocha-framework": "7.2.1",
-    "@wdio/spec-reporter": "7.2.1",
-    "allure-commandline": "2.13.8",
-    "chai": "4.4.1",
-    "chromedriver": "^124.0.1",
-    "lodash": "^4.17.21",
-    "ts-node": "10.2.1"
-  },
   "engines": {
-    "node": "14"
+    "node": ">=18.0.0"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5",
-    "typescript": "4.2.3",
-    "wdio-chromedriver-service": "7.0.0",
-    "webdriverio": "7.2.3"
+    "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.58.2",
+    "@reportportal/agent-js-playwright": "^5.4.0",
+    "@types/node": "^22.10.5",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.5.1",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.55.0"
   }
 }
