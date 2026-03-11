@@ -1,0 +1,24 @@
+{
+  "selectors": {
+    "header.title": "header .site-title",
+    "header.login": "header .header-login",
+    "footer.copy": "footer .site-footer .copyright"
+  },
+  "translations": {
+    "en": {
+      "header.title": "Welcome",
+      "header.login": "Log in",
+      "footer.copy": "© 2026 ACME"
+    },
+    "es": {
+      "header.title": "Bienvenido",
+      "header.login": "Iniciar sesión",
+      "footer.copy": "© 2026 ACME"
+    },
+    "ja": {
+      "header.title": "ようこそ",
+      "header.login": "ログイン",
+      "footer.copy": "© 2026 ACME"
+    }
+  }
+}
